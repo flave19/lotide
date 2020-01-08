@@ -14,8 +14,7 @@ const flatten = function (array){
 
 console.log(flatten([1, 2, [3, 4], 5, [6]]))
 
-  //     for( i = 0; i< arr.length;i++){
-  //       if (!ARR ){
-  //         emptyarr.push(arr[i])
+  //     for( j= 0; j< array[i].length;i++){
+  //         emptyarr.push(arrary[i])
   //       }
   //       else {
