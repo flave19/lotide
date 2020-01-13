@@ -35,3 +35,6 @@ const middle = function(array) {
 }
 
 module.exports = middle;
+
+assertArraysEqual(middle([1]),[]) // => []
+assertArraysEqual(middle([1, 2]),[]) // => []
