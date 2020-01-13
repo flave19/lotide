@@ -10,39 +10,28 @@ const eqArrays = function(arr1, arr2){
   return true
 }
 
-const assertEqual = function(actual, expected) {
-  if(actual !== expected){
-    console.log(`🛑🛑🛑 Assertion Failed:${actual} !== ${expected}`);
-  } else {
+const assertArraysEqual = function(actual, expected) {
+  if (eqArrays(actual, expected)) {
     console.log(`✅✅✅ Assertion Passed:${actual} === ${expected}`);
+  } else {
+    console.log(`🛑🛑🛑 Assertion Failed:${actual} !== ${expected}`);
   }
 };
 
-const middle = function (array){
-  if (array.length % 2 != 0){
-    let  baseindex = Math.floor(array.length/2)
-
-    return array[baseindex]
-
-  } else {
-    let firstindex = Math.floor(array.length/2);
-    let secondindex = firstindex -1;
-    let firstvalue = array[firstindex];
-    let secondvalue = array[secondindex];
-
-    return [secondvalue, firstvalue]
+const middle = function(array) {
+  let output = [];
+  let middle= Math.floor(array.length/2);
+  if(array.length === 1|| array.length ===2){
+    return output;
   }
+  else if (array.length % 2 === 1){
+    output.push(array[middle]);
+  }
+  else if(array.length % 2 === 0){
+    output.push(array[middle -1]);
+    output.push(array[middle]);
+  }
+  return output
 }
 
-console.log(middle([1, 2, 3]))
-// if Array.length = 2 
-// return 0
-
-// if Array.length > 2{
-//   if Array.length % 2 = even{
-
-//   }
-//   else {odd
-
-//   }
-// }
+module.exports = middle;
